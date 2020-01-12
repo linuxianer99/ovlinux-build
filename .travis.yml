@@ -7,6 +7,8 @@ before_install:
 - docker run -d -it --rm --name ovbuild -v $(pwd)/build:/workdir linuxianer99/ovlinux-build --workdir=/workdir
 - docker exec -it ovbuild repo init -u git://github.com/linuxianer99/ovlinux-manifest.git -b warrior
 - docker exec -it ovbuild repo sync
+- docker exec -it ovbuild pwd
+- docker exec -it ovbuild ls -al
 
 
 script:
