@@ -7,6 +7,7 @@ before_install:
 - sudo apt-get -y install repo
 - mkdir build
 - cd build
+- git config --global color.ui false
 - repo init -u git://github.com/linuxianer99/ovlinux-manifest.git -b warrior
 - repo sync
 #- docker run -d -it --rm --name ovbuild -v $(pwd)/build:/workdir linuxianer99/ovlinux-build --workdir=/workdir
