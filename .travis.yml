@@ -3,13 +3,18 @@ services:
 
 before_install:
 - docker pull linuxianer99/ovlinux-build
+- curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > repo
+- chmod a+x repo
 - mkdir build
-- docker run -d -it --rm --name ovbuild -v $(pwd)/build:/workdir linuxianer99/ovlinux-build --workdir=/workdir
-- docker exec -it ovbuild repo init -u git://github.com/linuxianer99/ovlinux-manifest.git -b warrior
-- docker exec -it ovbuild repo sync
-- docker exec -it ovbuild pwd
-- docker exec -it ovbuild ls -al
-- docker ps -a
+- ch build
+- repo --help
+
+#- docker run -d -it --rm --name ovbuild -v $(pwd)/build:/workdir linuxianer99/ovlinux-build --workdir=/workdir
+#- docker exec -it ovbuild repo init -u git://github.com/linuxianer99/ovlinux-manifest.git -b warrior
+#- docker exec -it ovbuild repo sync
+#- docker exec -it ovbuild pwd
+#- docker exec -it ovbuild ls -al
+#- docker ps -a
 
 
 script:
