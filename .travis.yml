@@ -3,8 +3,8 @@ services:
 
 before_install:
 - docker pull linuxianer99/ovlinux-build
-- curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > repo
-- chmod a+x repo
+- sudo apt-get update
+- sudo apt-get -y install repo
 - mkdir build
 - cd build
 - repo --help
