@@ -25,4 +25,4 @@ script:
 - cd poky
 - pwd
 - ls -al
-- docker run -d -it --rm --name ovbuild -v $(pwd)/poky:/workdir linuxianer99/ovlinux-build --workdir=/workdir --cmd=ls -al
+- docker run -it --rm --name ovbuild -v $(pwd)/poky:/workdir linuxianer99/ovlinux-build --workdir=/workdir --cmd=ls -al
