@@ -1,0 +1,12 @@
+services:
+  - docker
+
+before_install:
+- docker pull linuxianer99/ovlinux-build
+- docker run --name ovbuild linuxianer99/ovlinux-build
+- repo init -u git://github.com/linuxianer99/ovlinux-manifest.git -b warrior
+- repo sync
+
+script:
+- ls -als
+- pwd
