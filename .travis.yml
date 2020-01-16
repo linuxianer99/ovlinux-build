@@ -24,4 +24,4 @@ script:
 #- pwd
 #- ls -al
 #- docker run -it --rm --name ovbuild -v $(pwd)/poky:/workdir linuxianer99/ovlinux-build --workdir=/workdir TEMPLATECONF=meta-openvario/conf source oe-init-build-env && bitbake openvario-image-testing
-- docker run -it --rm --name ovbuild -v $(pwd)/poky:/workdir linuxianer99/ovlinux-build --workdir=/workdir ./build.sh
+- docker run -it --rm --name ovbuild -v $(pwd):/workdir linuxianer99/ovlinux-build --workdir=/workdir ./build.sh
