@@ -1,0 +1,15 @@
+name: Build openvario image
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Pull docker
+      run: docker pull linuxianer99/ovlinux-build
+    - name: Run container test
+      run: docker run -it --rm --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir ls -alh
