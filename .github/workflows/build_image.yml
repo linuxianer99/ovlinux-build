@@ -12,4 +12,4 @@ jobs:
     - name: Pull docker
       run: docker pull linuxianer99/ovlinux-build
     - name: Run container test
-      run: docker run -it --rm --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir ls -alh
+      run: docker run --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir ls -alh
