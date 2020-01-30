@@ -11,5 +11,11 @@ jobs:
     - uses: actions/checkout@v1
     - name: Pull docker
       run: docker pull linuxianer99/ovlinux-build
+    
+    - name: Checkout tools repo
+      uses: actions/checkout@v2
+      with:
+        repository: linuxianer99/ovlinux-manifest
+      
     - name: Run container test
       run: docker run --rm --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir ls -alh
