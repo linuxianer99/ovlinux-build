@@ -14,6 +14,9 @@ jobs:
     
     - name: Init repo
       run: docker run --rm --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir repo init -u git://github.com/linuxianer99/ovlinux-manifest.git -b warrior
-      
-    - name: Run container test
-      run: docker run --rm --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir ls -alh
+    
+    - name: Repo Sync
+      run: docker run --rm --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir repo sync
+        
+    - name: Run bitbake
+      run: docker run --rm --name ovbuild -v ${{ github.workspace }}:/workdir linuxianer99/ovlinux-build --workdir=/workdir ./build.sh
